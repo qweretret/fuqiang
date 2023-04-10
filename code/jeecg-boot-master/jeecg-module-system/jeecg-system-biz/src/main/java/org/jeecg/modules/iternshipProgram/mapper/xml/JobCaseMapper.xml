@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jeecg.modules.iternshipProgram.mapper.JobCaseMapper">
+
+    <select id="list" resultType="org.jeecg.modules.iternshipProgram.entity.JobCase">
+        select a.* from job_case a INNER join job_practicecmp b on a.company = b.id ${ew.customSqlSegment}
+    </select>
+
+    <select id="getjobCase" resultType="org.jeecg.modules.iternshipProgram.entity.JobCase">
+        select id,company,name from job_case
+    </select>
+
+</mapper>
